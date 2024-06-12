@@ -3,7 +3,7 @@ use kv_store::KvStore;
 
 #[tokio::main]
 async fn main() {
-    let store = KvStore::new();
+    let store = KvStore::new("kv_store.json");
 
     // Example usage
     store.set("key1".to_string(), "value1".to_string());
@@ -11,3 +11,4 @@ async fn main() {
     store.delete("key1");
     println!("key1: {:?}", store.get("key1"));
 }
+
